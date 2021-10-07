@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+This repo is built by Github CRCE and is open for open source contributions. Make sure you make Quality PRs to the repo. 
+
 ## Available Scripts
 
 In the project directory, you can run:
