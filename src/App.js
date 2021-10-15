@@ -4,7 +4,7 @@ import KeyPadComponent from "./components/KeyPadComponent";
 import ResultComponent from './components/ResultComponent';
 
 class App extends Component {
-    constructor(){
+    constructor() {
         super();
 
         this.state = {
@@ -14,18 +14,13 @@ class App extends Component {
 
     onClick = button => {
 
-        if(button === "="){
+        if (button === "=") {
             this.calculate()
-        }
-
-        else if(button === "C"){
+        } else if (button === "C") {
             this.reset()
-        }
-        else if(button === "CE"){
+        } else if (button === "CE") {
             this.backspace()
-        }
-
-        else {
+        } else {
             this.setState({
                 result: this.state.result + button
             })
@@ -35,18 +30,16 @@ class App extends Component {
 
     calculate = () => {
         var checkResult = ''
-        if(this.state.result.includes('--')){
-            checkResult = this.state.result.replace('--','+')
-        }
-
-        else {
+        if (this.state.result.includes('--')) {
+            checkResult = this.state.result.replace('--', '+')
+        } else {
             checkResult = this.state.result
         }
 
         try {
             this.setState({
                 // eslint-disable-next-line
-                result: (eval(checkResult) || "" ) + ""
+                result: (eval(checkResult) || "") + ""
             })
         } catch (e) {
             this.setState({
@@ -70,9 +63,10 @@ class App extends Component {
 
     render() {
         return (
+
             <div>
-                <div className="calculator-body">
-                    <h1>Simple Calculator</h1>
+                <h1 className = "heading">SIMPLE CALCULATOR</h1>
+                <div  className="calculator-body">
                     <ResultComponent result={this.state.result}/>
                     <KeyPadComponent onClick={this.onClick}/>
                 </div>
