@@ -20,7 +20,8 @@ class App extends Component {
             this.reset()
         } else if (button === "CE") {
             this.backspace()
-        } else {
+        }
+        else {
             this.setState({
                 result: this.state.result + button
             })
@@ -32,7 +33,14 @@ class App extends Component {
         var checkResult = ''
         if (this.state.result.includes('--')) {
             checkResult = this.state.result.replace('--', '+')
-        } else {
+        } 
+        else if (this.state.result.includes('²')){
+            checkResult = this.state.result.replace(`²`,'**2')
+        }
+        else if (this.state.result.includes('√')){
+            checkResult = this.state.result.replace('√','Math.sqrt')
+        }
+        else {
             checkResult = this.state.result
         }
 
@@ -45,7 +53,7 @@ class App extends Component {
             this.setState({
                 result: "error"
             })
-
+            console.log(e)
         }
     };
 
