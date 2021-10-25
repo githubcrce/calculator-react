@@ -40,6 +40,12 @@ class App extends Component {
         else if (this.state.result.includes('√')){
             checkResult = this.state.result.replace('√','Math.sqrt')
         }
+        else if (this.state.result.includes('mod')){
+            checkResult = this.state.result.replace('mod','Math.abs')
+        }
+        else if (this.state.result.includes('inv')){
+            checkResult = this.state.result.replace('inv','1/')
+        }
         else {
             checkResult = this.state.result
         }
